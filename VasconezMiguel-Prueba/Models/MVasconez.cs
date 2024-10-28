@@ -8,17 +8,17 @@ namespace VasconezMiguel_Prueba.Models
     {
         [Key]
         [Required(ErrorMessage = "La ID es obligatorio")]
-        [AllowNull]
         public int Id { get; set; }
         [MaxLength(200)]
         public string Nombre { get; set; }
         [DataType(DataType.Date)]
-        [AllowNull]
         public DateTime Fecha { get; set; }
         public float peso { get; set; }
         public bool Compra {  get; set; }
-        public Celular Celular { get; set; }
+        [AllowNull]
+        public Celular? Celular { get; set; }
         [ForeignKey("Celular")]
+        [AllowNull]
         public int IdCelular { get; set; }
 
     }
